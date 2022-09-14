@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="images.js"></script>
+        <!-- Google Analytics -->
+        <script>
+          (function (i, s, o, g, r, a, m) {
+            i["GoogleAnalyticsObject"] = r;
+            (i[r] =
+              i[r] ||
+              function () {
+                (i[r].q = i[r].q || []).push(arguments);
+              }),
+              (i[r].l = 1 * new Date());
+            (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m);
+          })(
+            window,
+            document,
+            "script",
+            "https://www.google-analytics.com/analytics.js",
+            "ga"
+          );
+    
+          ga("create", "UA-5384729-1", "auto");
+          ga("send", "pageview");
+        </script>
+        <!-- End Google Analytics -->
+  </head>
+  <body>
+    <div class="o-container">
+    <div class="o-container-principal">
+      <img src="Moño-regalo.png" class="o-mono" />
+      <div class="o-destino" id="destinario">
+        <p class="o-p">
+          Marca tu regalo y ¡dale estilo!<br>
+          Escribe aquí
+        </p>
+        <label style="color: white; text-align: start;">De:<input type="text" class="form-control hs-input" id="in-firma" required></label>
+        <p id="mensaje_ayuda2" class="help-block"></p>
+        <label style="color: white; text-align: start;">Para:<input type="text" class="form-control hs-input" id="nombre" required></label>
+        <div class="o-container-buttons" >
+          <a type="button" class="btn btn-light back-button" href="http://acsendo.com/fabricaderegalos/index2.html">Anterior</a>
+          <button type="button" class="btn btn-primary hs-button" id="sig-destino">Siguiente</button>
+        </div>
+      </div>
+      <div class="o-mensaje" id="mensaje">
+        <p class="o-p">
+          Selecciona el mensaje para tu amigo:
+        </p>
+        <div class="o-escoger-mensaje">
+        <label><input type="radio" id="boxpredeterminado" name="permisos2"><strong> Mensaje predeterminado:</strong><br>
+          Quiero que esta navidad esté llena de alegrías, abrazos y regalos que recarguen tu corazón de felicidad. 
+        </label>
+        <label style="margin-top: 10px;"><input type="radio" id="boxmensajepropio" name="permisos2"> Escribe tu propio mensaje:
+          <textarea class="form-control hs-input" rows="3" id="mensajepropio" style="width: 32rem!important;" maxlength="130"></textarea>
+          <span class="help-block">
+            <p id="mensaje_ayuda" class="help-block">Cuerpo del mensaje de alerta</p>
+          </span>
+        </label>
+      </div>
+        <div class="o-container-buttons" >
+          <a type="button" class="btn btn-light back-button" id="atras-destino">Anterior</a>
+          <button type="button" class="btn btn-primary hs-button" id="sig-obsequio">Siguiente</button>
+        </div>
+      </div>
+      <div class="o-mensaje" id="obsequio">
+        <p class="o-p">
+          Escoge el obsequio adicional que vas a darle a tu colaborador:
+        </p>
+        <div class="col-12 d-flex o-container-opns align-items-center cr">
+          <label><input type="radio" id="boxhelado" name="permisos"> ¡Día de postre! Yo invito</label>
+          <label><input type="radio" id="box2horas" name="permisos"> ¡Termina 2 horas antes hoy! Comparte con los que más quieres</label>
+          <label><input type="radio" id="boxlibre" name="permisos"> ¡Medio día libre! Para que puedas hacer algo divertido </label> <br>
+          <label class="letra-pequena">*Ten en cuenta que estos regalos corren por cuenta tuya o de tu empresa.</label>
+        </div>       
+         <div class="o-container-buttons">
+          <a type="button" class="btn btn-light back-button" id="atras-mensaje">Anterior</a>
+          <button type="button" class="btn btn-primary hs-button" id="sig-fondo">Siguiente</button>
+        </div>
+      </div>
+      <div class="o-fondos" id="fondo">
+        <p class="o-p">
+          Elige el fondo que prefieres y tu regalo se descargará automáticamente
+        </p>
+        <div class="o-imgfondo">
+          <img src="6-1-Fondo.png" width="23%" id="fondo1">
+          <img src="6-2-Fondo.png" width="23%" id="fondo2">
+          <img src="6-3-Fondo.png" width="23%" id="fondo3">
+          <img src="6-4-Fondo.png" width="23%" id="fondo4">
+        </div>
+        <div class="o-container-buttons" >
+          <a type="button" class="btn btn-light back-button" id="atras-obsequio">Anterior</a>
+        </div>
+      </div>
+      <div class="o-fondos" id="final">
+        <h3 class="o-title">¡Tu regalo está listo!</h3>
+        <p class="o-p">Ya se descargó tu PDF, envíalo ahora</p>
+      <a type="button" class="o-empacar" href="http://acsendo.com/fabricaderegalos/index2.html">
+          <img src="7-Empacar-otro.png">
+          <p class="o-p" style="margin:0;">Quiero empacar otro</p>
+       </a>
+      </div>
+    </div>
+    </div>
+  </body>
+  <script>
+  $("#mensajepropio").keypress(function(e) {
+  if (e.which == 13) {
+      return false;
+  }
+  });
+      $('#mensaje_ayuda').text('130 caracteres restantes');
+  $('#mensajepropio').keydown(function () {
+      var max = 130;
+      var len = $(this).val().length;
+      if (len >= max) {
+          $('#mensaje_ayuda').text('Has llegado al límite');// Aquí enviamos el mensaje a mostrar          
+          $('#mensaje_ayuda').addClass('text-danger');
+          $('#message').addClass('is-invalid');
+          $('#inputsubmit').addClass('disabled');    
+          document.getElementById('inputsubmit').disabled = true;                    
+      }}); 
+      $("#sig-destino")
+      .click(function () {
+        if($("#nombre").val().length > 0){
+        $("#destinario").css("display", "none"),
+        $("#mensaje").css("display", "flex"),
+        $("#mensaje").css("flex-direction", "column"),
+        $("#mensaje").css("align-content", "center"),
+        $("#mensaje").css("align-items", "center"),
+        $("#mensaje").css("justify-content", "center");
+        } else{
+          $('#mensaje_ayuda2').text('Este campo es obligatorio');
+        }
+      });
+      $("#atras-destino")
+      .click(function () {
+        $("#destinario").css("display", "flex"),
+        $("#mensaje").css("display", "none");
+        $('#mensaje_ayuda2').text('');
+      });
+      $("#sig-fondo")
+      .click(function () {
+        $("#obsequio").css("display", "none"),
+        $("#fondo").css("display", "flex"),
+        $("#fondo").css("flex-direction", "column"),
+        $("#fondo").css("align-content", "center"),
+        $("#fondo").css("align-items", "center"),
+        $("#fondo").css("justify-content", "center");
+      });
+      $("#sig-obsequio")
+      .click(function () {
+        $("#mensaje").css("display", "none"),
+        $("#obsequio").css("display", "flex"),
+        $("#obsequio").css("flex-direction", "column"),
+        $("#obsequio").css("align-content", "center"),
+        $("#obsequio").css("align-items", "center"),
+        $("#obsequio").css("justify-content", "center");
+      });
+      $("#atras-mensaje")
+      .click(function () {
+        $("#mensaje").css("display", "flex"),
+        $("#mensaje").css("flex-direction", "column"),
+        $("#mensaje").css("align-content", "center"),
+        $("#mensaje").css("align-items", "center"),
+        $("#mensaje").css("justify-content", "center"),
+        $("#obsequio").css("display", "none");
+      });
+      $("#atras-obsequio")
+      .click(function () {
+        $("#obsequio").css("display", "flex"),
+        $("#obsequio").css("flex-direction", "column"),
+        $("#obsequio").css("align-content", "center"),
+        $("#obsequio").css("align-items", "center"),
+        $("#obsequio").css("justify-content", "center"),
+        $("#fondo").css("display", "none");
+      });
+      $("#fondo1")
+      .click(function () {
+        $("#final").css("display", "flex"),
+        $("#final").css("flex-direction", "column"),
+        $("#final").css("align-content", "center"),
+        $("#final").css("align-items", "center"),
+        $("#final").css("justify-content", "center"),
+        $("#fondo").css("display", "none"),
+        generarpdf();
+      });
+      $("#fondo2")
+      .click(function () {
+        $("#final").css("display", "flex"),
+        $("#final").css("flex-direction", "column"),
+        $("#final").css("align-content", "center"),
+        $("#final").css("align-items", "center"),
+        $("#final").css("justify-content", "center"),
+        $("#fondo").css("display", "none"),
+        generarpdf2();
+      });
+      $("#fondo3")
+      .click(function () {
+        $("#final").css("display", "flex"),
+        $("#final").css("flex-direction", "column"),
+        $("#final").css("align-content", "center"),
+        $("#final").css("align-items", "center"),
+        $("#final").css("justify-content", "center"),
+        $("#fondo").css("display", "none"),
+        generarpdf3();
+      });
+      $("#fondo4")
+      .click(function () {
+        $("#final").css("display", "flex"),
+        $("#final").css("flex-direction", "column"),
+        $("#final").css("align-content", "center"),
+        $("#final").css("align-items", "center"),
+        $("#final").css("justify-content", "center"),
+        $("#fondo").css("display", "none"),
+        generarpdf4();
+      });
+
+      function generarpdf(){
+        
+        var doc = new jsPDF();
+        doc.addImage(fondo, 'JPEG', 0, 0, 210, 298);
+        doc.addFont('verdana', 'verdana', 'normal');
+        doc.setFont("verdana");
+        doc.setFontSize(13);
+        doc.setTextColor(57,84,109);
+        var nombre = ($("#nombre").val());
+        var textWidth = doc.getStringUnitWidth(nombre) * doc.internal.getFontSize() / doc.internal.scaleFactor;
+        var textOffset = (doc.internal.pageSize.width - textWidth) / 2;
+        doc.text(textOffset, 60, nombre);
+        
+        if($("#boxpredeterminado").is(':checked')) {  
+          var text1 = 'Quiero que esta navidad esté llena de alegrías, abrazos y regalos que recarguen tu corazón de felicidad.';
+          var text1_split = doc.splitTextToSize(text1, doc.internal.pageSize.width - 50);
+          doc.text(30, 70, text1_split);
+        }
+
+        if($("#boxmensajepropio").is(':checked')) {
+          var mensaje = ($("#mensajepropio").val());
+          var text1_split = doc.splitTextToSize(mensaje, doc.internal.pageSize.width - 50);
+          doc.text(30, 70, text1_split);
+        }
+        var text1 = 'Quise darte este obsequio navideño, espero que lo disfrutes y aproveches para sacar todo tu potencial este 2022.';
+        var text1_split = doc.splitTextToSize(text1, doc.internal.pageSize.width - 50);
+        doc.text(30, 85, text1_split);
+        var firma = ($("#in-firma").val());
+        var textfinal= 'Un abrazo,'+' '+ firma;
+        var textWidth = doc.getStringUnitWidth(textfinal) * doc.internal.getFontSize() / doc.internal.scaleFactor;
+        var textOffset = (doc.internal.pageSize.width - textWidth) / 2;
+        doc.text(textOffset, 100 ,textfinal);
+        doc.addImage(regalo16, 'png', 40, 110, 60, 60);
+        doc.link(30, 110, 100, 0, {url: 'https://s3.amazonaws.com/landings.acsendo/2020/ebooks/22_Gui%CC%81a_de_teletrabajo_para_Colaboradores.pdf'});
+        if($("#boxhelado").is(':checked')) {
+          doc.addImage(regalo18, 'JPEG', 110, 110, 60, 60);
+        }
+        if($("#box2horas").is(':checked')) {
+          doc.addImage(regalo17, 'JPEG', 110, 110, 60, 60);
+        }
+        if($("#boxlibre").is(':checked')) {
+          doc.addImage(regalo19, 'JPEG', 110, 110, 60, 60);
+        }
+        doc.link(0, 283, 1000, 20, {url: 'https://hubs.la/Q0103_LL0'});
+        doc.save('UnRegaloParaTi.pdf');
+      }
+      function generarpdf2(){
+        
+        var doc = new jsPDF();
+        doc.addImage(fondo2, 'JPEG', 0, 0, 210, 298);
+        doc.addFont('verdana', 'verdana', 'normal');
+        doc.setFont("verdana");
+        doc.setFontSize(13);
+        doc.setTextColor(57,84,109);
+        var nombre = ($("#nombre").val());
+        var textWidth = doc.getStringUnitWidth(nombre) * doc.internal.getFontSize() / doc.internal.scaleFactor;
+        var textOffset = (doc.internal.pageSize.width - textWidth) / 2;
+        doc.text(textOffset, 60, nombre);
+        
+        if($("#boxpredeterminado").is(':checked')) {  
+          var text1 = 'Quiero que esta navidad esté llena de alegrías, abrazos y regalos que recarguen tu corazón de felicidad.';
+          var text1_split = doc.splitTextToSize(text1, doc.internal.pageSize.width - 50);
+          doc.text(30, 70, text1_split);
+        }
+
+        if($("#boxmensajepropio").is(':checked')) {
+          var mensaje = ($("#mensajepropio").val());
+          var text1_split = doc.splitTextToSize(mensaje, doc.internal.pageSize.width - 50);
+          doc.text(30, 70, text1_split);
+        }
+        var text1 = 'Quise darte este obsequio navideño, espero que lo disfrutes y aproveches para sacar todo tu potencial este 2022.';
+        var text1_split = doc.splitTextToSize(text1, doc.internal.pageSize.width - 50);
+        doc.text(30, 85, text1_split);
+        var firma = ($("#in-firma").val());
+        var textfinal= 'Un abrazo,'+' '+ firma;
+        var textWidth = doc.getStringUnitWidth(textfinal) * doc.internal.getFontSize() / doc.internal.scaleFactor;
+        var textOffset = (doc.internal.pageSize.width - textWidth) / 2;
+        doc.text(textOffset, 100 ,textfinal);
+        doc.addImage(regalo16, 'png', 40, 110, 60, 60);
+        doc.link(30, 110, 100, 0, {url: 'https://s3.amazonaws.com/landings.acsendo/2020/ebooks/22_Gui%CC%81a_de_teletrabajo_para_Colaboradores.pdf'});
+        if($("#boxhelado").is(':checked')) {
+          doc.addImage(regalo18, 'JPEG', 110, 110, 60, 60);
+        }
+        if($("#box2horas").is(':checked')) {
+          doc.addImage(regalo17, 'JPEG', 110, 110, 60, 60);
+        }
+        if($("#boxlibre").is(':checked')) {
+          doc.addImage(regalo19, 'JPEG', 110, 110, 60, 60);
+        }
+        doc.link(0, 283, 1000, 20, {url: 'https://hubs.la/Q0103_LL0'});
+        doc.save('UnRegaloParaTi.pdf');
+      }
+      function generarpdf3(){
+        
+        var doc = new jsPDF();
+        doc.addImage(fondo3, 'JPEG', 0, 0, 210, 298);
+        doc.addFont('verdana', 'verdana', 'normal');
+        doc.setFont("verdana");
+        doc.setFontSize(13);
+        doc.setTextColor(57,84,109);
+        var nombre = ($("#nombre").val());
+        var textWidth = doc.getStringUnitWidth(nombre) * doc.internal.getFontSize() / doc.internal.scaleFactor;
+        var textOffset = (doc.internal.pageSize.width - textWidth) / 2;
+        doc.text(textOffset, 60, nombre);
+        
+        if($("#boxpredeterminado").is(':checked')) {  
+          var text1 = 'Quiero que esta navidad esté llena de alegrías, abrazos y regalos que recarguen tu corazón de felicidad.';
+          var text1_split = doc.splitTextToSize(text1, doc.internal.pageSize.width - 50);
+          doc.text(30, 70, text1_split);
+        }
+
+        if($("#boxmensajepropio").is(':checked')) {
+          var mensaje = ($("#mensajepropio").val());
+          var text1_split = doc.splitTextToSize(mensaje, doc.internal.pageSize.width - 50);
+          doc.text(30, 70, text1_split);
+        }
+        var text1 = 'Quise darte este obsequio navideño, espero que lo disfrutes y aproveches para sacar todo tu potencial este 2022.';
+        var text1_split = doc.splitTextToSize(text1, doc.internal.pageSize.width - 50);
+        doc.text(30, 85, text1_split);
+        var firma = ($("#in-firma").val());
+        var textfinal= 'Un abrazo,'+' '+ firma;
+        var textWidth = doc.getStringUnitWidth(textfinal) * doc.internal.getFontSize() / doc.internal.scaleFactor;
+        var textOffset = (doc.internal.pageSize.width - textWidth) / 2;
+        doc.text(textOffset, 100 ,textfinal);
+        doc.addImage(regalo16, 'png', 40, 110, 60, 60);
+        doc.link(30, 110, 100, 0, {url: 'https://s3.amazonaws.com/landings.acsendo/2020/ebooks/22_Gui%CC%81a_de_teletrabajo_para_Colaboradores.pdf'});
+        if($("#boxhelado").is(':checked')) {
+          doc.addImage(regalo18, 'JPEG', 110, 110, 60, 60);
+        }
+        if($("#box2horas").is(':checked')) {
+          doc.addImage(regalo17, 'JPEG', 110, 110, 60, 60);
+        }
+        if($("#boxlibre").is(':checked')) {
+          doc.addImage(regalo19, 'JPEG', 110, 110, 60, 60);
+        }
+        doc.link(0, 283, 1000, 20, {url: 'https://hubs.la/Q0103_LL0'});
+        doc.save('UnRegaloParaTi.pdf');
+      }
+      function generarpdf4(){
+        
+        var doc = new jsPDF();
+        doc.addImage(fondo4, 'JPEG', 0, 0, 210, 298);
+        doc.addFont('verdana', 'verdana', 'normal');
+        doc.setFont("verdana");
+        doc.setFontSize(13);
+        doc.setTextColor(57,84,109);
+        var nombre = ($("#nombre").val());
+        var textWidth = doc.getStringUnitWidth(nombre) * doc.internal.getFontSize() / doc.internal.scaleFactor;
+        var textOffset = (doc.internal.pageSize.width - textWidth) / 2;
+        doc.text(textOffset, 60, nombre);
+        
+        if($("#boxpredeterminado").is(':checked')) {  
+          var text1 = 'Quiero que esta navidad esté llena de alegrías, abrazos y regalos que recarguen tu corazón de felicidad.';
+          var text1_split = doc.splitTextToSize(text1, doc.internal.pageSize.width - 50);
+          doc.text(30, 70, text1_split);
+        }
+
+        if($("#boxmensajepropio").is(':checked')) {
+          var mensaje = ($("#mensajepropio").val());
+          var text1_split = doc.splitTextToSize(mensaje, doc.internal.pageSize.width - 50);
+          doc.text(30, 70, text1_split);
+        }
+        var text1 = 'Quise darte este obsequio navideño, espero que lo disfrutes y aproveches para sacar todo tu potencial este 2022.';
+        var text1_split = doc.splitTextToSize(text1, doc.internal.pageSize.width - 50);
+        doc.text(30, 85, text1_split);
+        var firma = ($("#in-firma").val());
+        var textfinal= 'Un abrazo,'+' '+ firma;
+        var textWidth = doc.getStringUnitWidth(textfinal) * doc.internal.getFontSize() / doc.internal.scaleFactor;
+        var textOffset = (doc.internal.pageSize.width - textWidth) / 2;
+        doc.text(textOffset, 100 ,textfinal);
+        doc.addImage(regalo16, 'png', 40, 110, 60, 60);
+        doc.link(30, 110, 100, 0, {url: 'https://s3.amazonaws.com/landings.acsendo/2020/ebooks/22_Gui%CC%81a_de_teletrabajo_para_Colaboradores.pdf'});
+        if($("#boxhelado").is(':checked')) {
+          doc.addImage(regalo18, 'JPEG', 110, 110, 60, 60);
+        }
+        if($("#box2horas").is(':checked')) {
+          doc.addImage(regalo17, 'JPEG', 110, 110, 60, 60);
+        }
+        if($("#boxlibre").is(':checked')) {
+          doc.addImage(regalo19, 'JPEG', 110, 110, 60, 60);
+        }
+        doc.link(0, 283, 1000, 20, {url: 'https://hubs.la/Q0103_LL0'});
+        doc.save('UnRegaloParaTi.pdf');
+      }
+  </script>
+</html>

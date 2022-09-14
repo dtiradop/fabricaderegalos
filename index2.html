@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fábrica de Regalos</title>
+    <meta
+      property="og:url"
+      content="https://www.acsendo.com/fabricaderegalos"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="¡Arma tu obsequio aquí!" />
+    <meta
+      property="og:description"
+      content="Entrega regalos a tu equipo, colegas o cualquier persona que disfrute la gestión del talento humano"
+    />
+    <meta
+      property="og:image"
+      content="https://www.acsendo.com/fabricaderegalos/Miniatura-Fábrica-de-regalos.jpg"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Analytics -->
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-5384729-1", "auto");
+      ga("send", "pageview");
+    </script>
+    <!-- End Google Analytics -->
+  </head>
+  <body>
+    <div class="o-container">
+      <div class="o-container-principal">
+        <img src="Moño-regalo.png" class="o-mono" />
+        <div class="o-elige" id="elige">
+          <h3 class="o-title-form">Elige el kit para regalarle a tu colega</h3>
+          <div class="row justify-content-evenly">
+            <div class="col-5 d-flex o-opn align-items-center" id="trineo">
+              <div class="col-4">
+                <img src="2-1-Trineo.png" />
+              </div>
+              <div class="col-8">
+                <p class="o-title-opn">Kit Trineo</p>
+                <p class="o-p-opn">
+                  Ideal para los CEO y directivos que quieren inspirar y
+                  potenciar el desempeño de sus colaboradores.
+                </p>
+              </div>
+            </div>
+            <div class="col-5 d-flex o-opn align-items-center" id="rudolph">
+              <div class="col-4">
+                <img src="2-2-Rudolph.png" />
+              </div>
+              <div class="col-8">
+                <p class="o-title-opn">Kit Rudolph</p>
+                <p class="o-p-opn">
+                  ¿Conoces un líder que quiera ser la luz guía del equipo?
+                  Regálale este kit.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-evenly">
+            <div class="col-5 d-flex o-opn align-items-center" id="nieve">
+              <div class="col-4">
+                <img src="2-3-Copo-de-nieve.png" />
+              </div>
+              <div class="col-8">
+                <p class="o-title-opn">Kit Copo de Nieve</p>
+                <p class="o-p-opn">
+                  Reconoce a los héroes del año! Este regalo es para tus amigos
+                  y colegas de Recursos Humanos.
+                </p>
+              </div>
+            </div>
+            <div class="col-5 d-flex o-opn align-items-center" id="carta">
+              <div class="col-4">
+                <img src="2-4-Carta-a-Santa.png" />
+              </div>
+              <div class="col-8">
+                <p class="o-title-opn">Carta a Santa</p>
+                <p class="o-p-opn">
+                  Elige el regalo que más te guste y envíaselo a la estrella de
+                  tu equipo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="o-opns" id="div-trineo">
+          <div class="col-12 d-flex o-container-opns align-items-center">
+            <div class="col-4">
+              <img src="3-1-Trineo.png" />
+            </div>
+            <div class="col-8">
+              <p class="o-title">Kit Trineo</p>
+              <p class="o-p">
+                Contiene 5 eBooks específicamente seleccionados para que toda la
+                compañía se enfoque en el mismo objetivo este 2022.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 d-flex o-container-opns align-items-center cr">
+            <ul>
+              <li>
+                <span class="o-punto">·</span> Guía fundamental de OKR para
+                empresas
+              </li>
+              <li>
+                <span class="o-punto">·</span> 6 Estilos de liderazgo y cómo
+                aprovecharlos en tu organización
+              </li>
+              <li>
+                <span class="o-punto">·</span> Guía de productividad para
+                empresas
+              </li>
+              <li>
+                <span class="o-punto">·</span> Guía para crear una comunicación
+                eficaz en la empresa
+              </li>
+              <li>
+                <span class="o-punto">·</span> Guía para mejorar el desempeño de
+                tus colaboradores
+              </li>
+            </ul>
+          </div>
+          <div class="o-container-buttons">
+            <button
+              type="button"
+              class="btn btn-light back-button"
+              id="atras-trineo"
+            >
+              Anterior
+            </button>
+            <a
+              type="button"
+              class="btn btn-primary hs-button"
+              href="http://www.acsendo.com/fabricaderegalos/trineo.html"
+              >Siguiente</a
+            >
+          </div>
+        </div>
+        <div class="o-opns" id="div-rudolph">
+          <div class="col-12 d-flex o-container-opns align-items-center">
+            <div class="col-4">
+              <img src="3-2-Rudolph.png" />
+            </div>
+            <div class="col-8">
+              <p class="o-title">Kit Rudolph</p>
+              <p class="o-p">
+                Contiene 5 eBooks para ser el mejor líder, porque un líder
+                siempre abre el camino para que su equipo logre los objetivos.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 d-flex o-container-opns align-items-center cr">
+            <ul>
+              <li>
+                <span class="o-punto">·</span> Guía fundamental de Conflictos
+                Laborales
+              </li>
+              <li>
+                <span class="o-punto">·</span> Guía para dar feedback efectivo
+              </li>
+              <li>
+                <span class="o-punto">·</span>Checklist para evaluar y crear
+                metas de los empleados
+              </li>
+              <li>
+                <span class="o-punto">·</span> Guía de transformación digital
+                para líderes
+              </li>
+              <li>
+                <span class="o-punto">·</span> La importancia del liderazgo
+                emocional para el éxito de tu compañía
+              </li>
+            </ul>
+          </div>
+          <div class="o-container-buttons">
+            <button
+              type="button"
+              class="btn btn-light back-button"
+              id="atras-rudolph"
+            >
+              Anterior
+            </button>
+            <a
+              type="button"
+              class="btn btn-primary hs-button"
+              href="http://www.acsendo.com/fabricaderegalos/rudolph.html"
+              >Siguiente</a
+            >
+          </div>
+        </div>
+        <div class="o-opns" id="div-nieve">
+          <div class="col-12 d-flex o-container-opns align-items-center">
+            <div class="col-4">
+              <img src="3-3-Copo-de-nieve.png" />
+            </div>
+            <div class="col-8">
+              <p class="o-title">Kit Copo de nive</p>
+              <p class="o-p">
+                Contiene las 5 guías definitivas con las que podrán inculcar e
+                impulsar una cultura organizacional de la que todos estemos
+                orgullosos.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 d-flex o-container-opns align-items-center cr">
+            <ul>
+              <li>
+                <span class="o-punto">·</span> Guía fundamental para gestionar
+                la cultura organizacional
+              </li>
+              <li>
+                <span class="o-punto">·</span> Guía fundamental para incorporar
+                millennials
+              </li>
+              <li>
+                <span class="o-punto">·</span> Guía para encontrar a los mejores
+                candidatos
+              </li>
+              <li>
+                <span class="o-punto">·</span> Guía fundamental de Employee
+                Engagement
+              </li>
+              <li>
+                <span class="o-punto">·</span> 3 Ideas para aprovechar la
+                gamificación en recursos humanos
+              </li>
+            </ul>
+          </div>
+          <div class="o-container-buttons">
+            <button
+              type="button"
+              class="btn btn-light back-button"
+              id="atras-nieve"
+            >
+              Anterior
+            </button>
+            <a
+              type="button"
+              class="btn btn-primary hs-button"
+              href="http://www.acsendo.com/fabricaderegalos/copodenieve.html"
+              >Siguiente</a
+            >
+          </div>
+        </div>
+        <div class="o-opns" id="div-carta">
+          <div class="col-12 d-flex o-container-opns align-items-center">
+            <div class="col-4">
+              <img src="3-4-Carta-a-Santa.png" />
+            </div>
+            <div class="col-8">
+              <p class="o-title">Kit Carta a Santa</p>
+              <p class="o-p">
+                Es el regalo que solo los mejores líderes pueden dar a sus
+                colaboradores. Contiene:
+              </p>
+            </div>
+          </div>
+          <div class="col-12 d-flex o-container-opns align-items-center cr">
+            <ul>
+              <li>
+                <span class="o-punto">·</span> Guía de teletrabajo para
+                colaboradores
+              </li>
+            </ul>
+            <p class="o-p" style="color: #009dac">
+              Y te dejamos 3 ideas de obsequios adicionales que puedes darle a
+              tu colaborador:
+            </p>
+            <ul>
+              <li><span class="o-punto">·</span> ¡Día de postre! Yo invito</li>
+              <li>
+                <span class="o-punto">·</span> ¡Termina 2 horas antes hoy!
+                Comparte con los que más quieres
+              </li>
+              <li>
+                <span class="o-punto">·</span> ¡Medio día libre! Para que puedas
+                hacer algo divertido
+              </li>
+              <label class="letra-pequena"
+                >*Ten en cuenta que estos regalos corren por cuenta tuya o de tu
+                empresa.</label
+              >
+            </ul>
+          </div>
+          <div class="o-container-buttons">
+            <button
+              type="button"
+              class="btn btn-light back-button"
+              id="atras-carta"
+            >
+              Anterior
+            </button>
+            <a
+              type="button"
+              class="btn btn-primary hs-button"
+              href="http://www.acsendo.com/fabricaderegalos/carta.html"
+              >Siguiente</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    $("#trineo")
+      .css("cursor", "pointer")
+      .click(function () {
+        $("#elige").css("display", "none"),
+          $("#div-trineo").css("display", "flex"),
+          $("#div-trineo").css("flex-direction", "column"),
+          $("#div-trineo").css("align-content", "center"),
+          $("#div-trineo").css("align-items", "center"),
+          $("#div-trineo").css("justify-content", "center");
+      });
+    $("#rudolph")
+      .css("cursor", "pointer")
+      .click(function () {
+        $("#elige").css("display", "none"),
+          $("#div-rudolph").css("display", "flex"),
+          $("#div-rudolph").css("flex-direction", "column"),
+          $("#div-rudolph").css("align-content", "center"),
+          $("#div-rudolph").css("align-items", "center"),
+          $("#div-rudolph").css("justify-content", "center");
+      });
+    $("#nieve")
+      .css("cursor", "pointer")
+      .click(function () {
+        $("#elige").css("display", "none"),
+          $("#div-nieve").css("display", "flex");
+        $("#div-nieve").css("flex-direction", "column"),
+          $("#div-nieve").css("align-content", "center"),
+          $("#div-nieve").css("align-items", "center"),
+          $("#div-nieve").css("justify-content", "center");
+      });
+    $("#carta")
+      .css("cursor", "pointer")
+      .click(function () {
+        $("#elige").css("display", "none"),
+          $("#div-carta").css("display", "flex"),
+          $("#div-carta").css("flex-direction", "column"),
+          $("#div-carta").css("align-content", "center"),
+          $("#div-carta").css("align-items", "center"),
+          $("#div-carta").css("justify-content", "center");
+      });
+    $("#atras-trineo").click(function () {
+      $("#elige").css("display", "flex"),
+        $("#div-trineo").css("display", "none");
+    });
+    $("#atras-rudolph").click(function () {
+      $("#elige").css("display", "flex"),
+        $("#div-rudolph").css("display", "none");
+    });
+    $("#atras-nieve").click(function () {
+      $("#elige").css("display", "flex"),
+        $("#div-nieve").css("display", "none");
+    });
+    $("#atras-carta").click(function () {
+      $("#elige").css("display", "flex"),
+        $("#div-carta").css("display", "none");
+    });
+  </script>
+</html>
